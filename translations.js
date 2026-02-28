@@ -19,7 +19,7 @@ const translations = {
         card_chat_title: "Chat Diretta",
         card_chat_desc: "Comunica con il tuo coach, fai domande e ricevi feedback in tempo reale per non sbagliare mai.",
         card_prog_title: "Monitoraggio Progressi",
-        card_prog_desc: "Invia check-in periodici con peso, misure e foto per un'analisi dettagliata del tuo percorso.",
+        card_prog_desc: "Invia check periodici con peso, misure e foto per un'analisi dettagliata del tuo percorso.",
 
         // SEZIONE COACH (INDEX)
         sec_coach_title: "Strumenti per Coach",
@@ -33,9 +33,9 @@ const translations = {
         
         // DETTAGLI INDEX (CLIENTE)
         det_plans_title: "Dettagli Piani su Misura",
-        det_plans_desc: "Visualizza i tuoi allenamenti giorno per giorno con video tutorial e timer integrati.",
+        det_plans_desc: "Visualizza i tuoi allenamenti giorno per giorno con video tutorial del tuo coach e player integrato.",
         det_chat_title: "Chat Integrata",
-        det_chat_desc: "Resta sempre in contatto. Invia video della tua esecuzione e ricevi correzioni immediate.",
+        det_chat_desc: "Resta sempre in contatto. Invia check e foto delle tue performance e ricevi correzioni immediate.",
         det_prog_title: "I tuoi Progressi",
         det_prog_desc: "Grafici intuitivi per monitorare il peso, le misure corporee e i carichi sollevati nel tempo.",
 
@@ -44,8 +44,8 @@ const translations = {
         det_c_clients_desc: "Una panoramica completa di tutti i tuoi atleti con notifiche intelligenti.",
         det_c_plans_title: "Editor Allenamenti",
         det_c_plans_desc: "Crea schede in pochi minuti trascinando gli esercizi dal database.",
-        det_c_brand_title: "Strumenti di Marketing",
-        det_c_brand_desc: "Analisi delle performance del tuo profilo e strumenti di condivisione social.",
+        det_c_brand_title: "Strumenti per Merchandise e Branding",
+        det_c_brand_desc: "Condividi post sul mondo del fitness, fornisci codici sconto e merchandise per espandere il tuo business.",
 
         footer_rights: "© 2024 MoveCare. Tutti i diritti riservati.",
         footer_privacy: "Privacy Policy",
@@ -141,7 +141,7 @@ const translations = {
         card_chat_title: "Direct Chat",
         card_chat_desc: "Communicate with your coach, ask questions, and get real-time feedback to never go wrong.",
         card_prog_title: "Progress Tracking",
-        card_prog_desc: "Send periodic check-ins with weight, measurements, and photos for a detailed analysis of your journey.",
+        card_prog_desc: "Send periodic checks with weight, measurements, and photos for a detailed analysis of your journey.",
 
         // COACH SECTION (INDEX)
         sec_coach_title: "Tools for Coaches",
