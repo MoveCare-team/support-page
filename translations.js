@@ -118,7 +118,7 @@ const translations = {
 
         // DOWNLOAD
         download_title: "Scarica MoveCare oggi",
-        download_desc: "Scegli il tuo store e inizia subito il tuo percorso di benessere."
+        download_desc: "Scegli il tuo store e inizia subito il tuo percorso di benessere.",
         download_desktop: "Versioni Desktop"
     },
     en: {
@@ -240,7 +240,7 @@ const translations = {
 
         // DOWNLOAD
         download_title: "Download MoveCare Today",
-        download_desc: "Choose your store and start your wellness journey now."
+        download_desc: "Choose your store and start your wellness journey now.",
         download_desktop: "Desktop Versions"
     }
 };
