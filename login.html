@@ -24,7 +24,7 @@
                 </select>
 
                 <!-- Link per tornare alla home -->
-                <a href="index.html" class="btn" data-i18n="nav_download">Torna alla Home</a>
+                <a href="index.html" class="btn" data-i18n="nav_home">Torna alla Home</a>
         </div>
     </div>
 </header>
@@ -34,40 +34,40 @@
 
         <!-- Card di Login -->
         <div class="auth-card" id="login-card">
-            <h2>Bentornato</h2>
+            <h2 data-i18n="login_welcome">Bentornato</h2>
             <div id="login-error" class="error-message"></div>
 
             <form id="login-form">
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required placeholder="nome@esempio.com">
+                    <label for="email" data-i18n="login_email_label">Email</label>
+                    <input type="email" id="email" required placeholder="nome@esempio.com" data-i18n="login_email_placeholder">
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" required placeholder="La tua password">
+                    <label for="password" data-i18n="login_password_label">Password</label>
+                    <input type="password" id="password" required placeholder="La tua password" data-i18n="login_password_placeholder">
                 </div>
-                <button type="submit" class="auth-btn">Accedi</button>
+                <button type="submit" class="auth-btn" data-i18n="login_btn">Accedi</button>
             </form>
 
             <div class="auth-links">
-                <a id="show-reset">Password dimenticata?</a>
+                <a id="show-reset" data-i18n="login_forgot">Password dimenticata?</a>
             </div>
         </div>
 
         <!-- Questo è il blocco che appare quando clicchi "Password dimenticata" -->
         <div class="auth-card" id="reset-card" style="display: none;">
-            <h2>Recupera Password</h2>
-            <!-- ... testo descrittivo ... -->
+            <h2 data-i18n="reset_title">Recupera Password</h2>
+            <p data-i18n="reset_desc">Inserisci la tua email. Ti invieremo un link per reimpostare la password.</p>
             <form id="reset-form">
                 <div class="form-group">
-                    <label for="reset-email">Email</label>
-                    <input type="email" id="reset-email" required placeholder="nome@esempio.com">
+                    <label for="reset-email" data-i18n="login_email_label">Email</label>
+                    <input type="email" id="reset-email" required placeholder="nome@esempio.com" data-i18n="login_email_placeholder">
                 </div>
-                <button type="submit" class="auth-btn">Invia Link</button>
+                <button type="submit" class="auth-btn" data-i18n="reset_btn">Invia Link</button>
             </form>
 
             <div class="auth-links">
-                <a id="show-login">Torna al Login</a>
+                <a id="show-login" data-i18n="reset_back">Torna al Login</a>
             </div>
         </div>
 
@@ -77,8 +77,8 @@
 
 <footer>
     <div class="container">
-        <p>&copy; 2024 MoveCare. Tutti i diritti riservati.</p>
-        <p><a href="privacy.html">Privacy Policy</a></p>
+        <p data-i18n="footer_rights">&copy; 2024 MoveCare. Tutti i diritti riservati.</p>
+        <p><a href="privacy.html" data-i18n="footer_privacy">Privacy Policy</a></p>
     </div>
 </footer>
 

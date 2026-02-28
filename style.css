@@ -87,6 +87,17 @@ header .container {
     color: var(--dark-color);
 }
 
+/* Stile specifico per il selettore nel footer */
+footer .lang-select {
+    color: var(--light-color);
+    border-color: rgba(255, 255, 255, 0.2);
+    margin: 0 0 1rem 0;
+}
+
+footer .lang-select option {
+    color: var(--dark-color);
+}
+
 /* --- PULSANTI --- */
 .btn {
     display: inline-block;
@@ -289,6 +300,34 @@ header .container {
     color: #6c757d;
     font-weight: 500;
     margin-top: 1rem;
+}
+
+.screenshots-container {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding: 1rem 0.5rem; /* Spazio per l'ombra e scrollbar */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start; /* Allinea a sinistra per lo scroll */
+}
+
+/* Su desktop, se ci sono poche immagini, le centriamo */
+@media (min-width: 769px) {
+    .screenshots-container {
+        justify-content: center;
+    }
+}
+
+.app-screenshot {
+    width: auto;
+    max-width: 280px; /* Leggermente ridotto per vederne parzialmente una seconda su mobile */
+    max-height: 550px; /* Limite altezza per non occupare tutto lo schermo */
+    height: auto;
+    flex: 0 0 auto; /* Impedisce all'immagine di schiacciarsi */
+    scroll-snap-align: center;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 /* --- AUTH PAGES (Login/Profile) --- */
@@ -524,12 +563,46 @@ footer a {
     border-color: rgba(0, 255, 128, 0.3);
 }
 
+/* Effetto Glow specifico per Windows */
+.store-badge.windows:hover {
+    box-shadow: 0 8px 25px rgba(0, 120, 215, 0.25);
+    border-color: rgba(0, 120, 215, 0.3);
+}
+
+/* Effetto Glow specifico per macOS */
+.store-badge.macos:hover {
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+    border-color: rgba(255,255,255,0.3);
+}
+
+/* WIP State (Work In Progress) */
+.store-badge.wip {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.store-badge.wip:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: rgba(255,255,255,0.15);
+}
+
 .store-badge svg {
     margin-right: 15px;
     fill: #fff;
     width: 32px;
     height: 32px;
 }
+/* Responsive Button (Text/Icon toggle) */
+.btn-icon { display: none; }
+
+@media (max-width: 768px) {
+    .btn-text { display: none; }
+    .btn-icon { display: block; }
+    .btn-download { padding: 10px 12px; }
+}
+
+
 
 .store-badge .text {
     display: flex;
@@ -548,4 +621,25 @@ footer a {
     font-size: 1.3rem;
     font-weight: 700;
     line-height: 1.2;
+}
+
+/* --- SPA VIEWS --- */
+.page-view {
+    display: none;
+    animation: fadeInView 0.4s ease forwards;
+}
+
+.page-view.active {
+    display: block;
+}
+
+/* Padding per le viste diverse dalla home per compensare l'header fisso */
+.page-view:not(#view-home) {
+    padding-top: 100px;
+    padding-bottom: 2rem;
+}
+
+@keyframes fadeInView {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }

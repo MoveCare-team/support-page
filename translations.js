@@ -3,6 +3,7 @@ const translations = {
         nav_login: "Login",
         nav_profile: "Profilo",
         nav_download: "Scarica l'App",
+        nav_home: "Torna alla Home",
         hero_title: "Il tuo benessere,<br> a portata di mano",
         hero_desc: "La piattaforma completa per coach e clienti. Allenati meglio, gestisci il tuo business e raggiungi i tuoi obiettivi.",
         tab_client: "Sei un Cliente?",
@@ -10,18 +11,25 @@ const translations = {
         client_title: "Tutto ciò di cui hai bisogno",
         coach_title: "Strumenti per Coach",
         coach_desc: "Porta la tua attività al livello successivo. MoveCare ti offre gli strumenti per gestire i tuoi clienti, creare contenuti e far crescere il tuo brand.",
-        feat_plans: "Piani su Misura",
-        feat_plans_desc: "Ricevi schede di allenamento e piani nutrizionali creati apposta per te dal tuo coach.",
-        feat_chat: "Chat Diretta",
-        feat_chat_desc: "Comunica con il tuo coach, fai domande e ricevi feedback in tempo reale.",
-        feat_progress: "Monitoraggio Progressi",
-        feat_progress_desc: "Invia check-in periodici con peso, misure e foto per un'analisi dettagliata.",
-        feat_manage: "Gestisci i Clienti",
-        feat_manage_desc: "Centralizza la gestione dei clienti, assegna piani e monitora i progressi.",
-        feat_create: "Crea Piani e Contenuti",
-        feat_create_desc: "Costruisci la tua libreria di esercizi e componi piani in modo semplice.",
-        feat_brand: "Fai Crescere il Tuo Brand",
-        feat_brand_desc: "Condividi la tua esperienza attraverso articoli e video per raggiungere nuovi clienti.",
+        
+        // SEZIONE CLIENTE (INDEX)
+        sec_client_title: "Tutto ciò di cui hai bisogno",
+        card_plans_title: "Piani su Misura",
+        card_plans_desc: "Ricevi schede di allenamento e piani nutrizionali creati apposta per te dal tuo coach.",
+        card_chat_title: "Chat Diretta",
+        card_chat_desc: "Comunica con il tuo coach, fai domande e ricevi feedback in tempo reale per non sbagliare mai.",
+        card_prog_title: "Monitoraggio Progressi",
+        card_prog_desc: "Invia check-in periodici con peso, misure e foto per un'analisi dettagliata del tuo percorso.",
+
+        // SEZIONE COACH (INDEX)
+        sec_coach_title: "Strumenti per Coach",
+        sec_coach_desc: "Porta la tua attività al livello successivo. MoveCare ti offre gli strumenti per gestire i tuoi clienti, creare contenuti e far crescere il tuo brand.",
+        card_c_clients_title: "Gestisci i Clienti",
+        card_c_clients_desc: "Centralizza la gestione dei clienti, assegna piani e monitora i progressi da una dashboard intuitiva.",
+        card_c_plans_title: "Crea Piani e Contenuti",
+        card_c_plans_desc: "Costruisci la tua libreria di esercizi e componi piani di allenamento e nutrizionali in modo semplice e veloce.",
+        card_c_brand_title: "Fai Crescere il Tuo Brand",
+        card_c_brand_desc: "Condividi la tua esperienza attraverso articoli, video e merchandise per raggiungere nuovi clienti.",
         
         // DETTAGLI INDEX (CLIENTE)
         det_plans_title: "Dettagli Piani su Misura",
@@ -111,11 +119,13 @@ const translations = {
         // DOWNLOAD
         download_title: "Scarica MoveCare oggi",
         download_desc: "Scegli il tuo store e inizia subito il tuo percorso di benessere."
+        download_desktop: "Versioni Desktop"
     },
     en: {
         nav_login: "Login",
         nav_profile: "Profile",
         nav_download: "Download App",
+        nav_home: "Back to Home",
         hero_title: "Your wellness,<br> at your fingertips",
         hero_desc: "The complete platform for coaches and clients. Train better, manage your business, and reach your goals.",
         tab_client: "Are you a Client?",
@@ -123,18 +133,25 @@ const translations = {
         client_title: "Everything you need",
         coach_title: "Tools for Coaches",
         coach_desc: "Take your business to the next level. MoveCare gives you the tools to manage clients, create content, and grow your brand.",
-        feat_plans: "Tailored Plans",
-        feat_plans_desc: "Receive workout and nutrition plans created specifically for you by your coach.",
-        feat_chat: "Direct Chat",
-        feat_chat_desc: "Communicate with your coach, ask questions, and get real-time feedback.",
-        feat_progress: "Progress Tracking",
-        feat_progress_desc: "Send periodic check-ins with weight, measurements, and photos for detailed analysis.",
-        feat_manage: "Manage Clients",
-        feat_manage_desc: "Centralize client management, assign plans, and monitor progress.",
-        feat_create: "Create Plans & Content",
-        feat_create_desc: "Build your exercise library and compose plans quickly and easily.",
-        feat_brand: "Grow Your Brand",
-        feat_brand_desc: "Share your experience through articles and videos to reach new clients.",
+        
+        // CLIENT SECTION (INDEX)
+        sec_client_title: "Everything you need",
+        card_plans_title: "Tailored Plans",
+        card_plans_desc: "Receive workout and nutrition plans created specifically for you by your coach.",
+        card_chat_title: "Direct Chat",
+        card_chat_desc: "Communicate with your coach, ask questions, and get real-time feedback to never go wrong.",
+        card_prog_title: "Progress Tracking",
+        card_prog_desc: "Send periodic check-ins with weight, measurements, and photos for a detailed analysis of your journey.",
+
+        // COACH SECTION (INDEX)
+        sec_coach_title: "Tools for Coaches",
+        sec_coach_desc: "Take your business to the next level. MoveCare gives you the tools to manage clients, create content, and grow your brand.",
+        card_c_clients_title: "Manage Clients",
+        card_c_clients_desc: "Centralize client management, assign plans, and monitor progress from an intuitive dashboard.",
+        card_c_plans_title: "Create Plans & Content",
+        card_c_plans_desc: "Build your exercise library and compose workout and nutrition plans quickly and easily.",
+        card_c_brand_title: "Grow Your Brand",
+        card_c_brand_desc: "Share your experience through articles, videos, and merchandise to reach new clients.",
         
         // INDEX DETAILS (CLIENT)
         det_plans_title: "Tailored Plans Details",
@@ -224,6 +241,7 @@ const translations = {
         // DOWNLOAD
         download_title: "Download MoveCare Today",
         download_desc: "Choose your store and start your wellness journey now."
+        download_desktop: "Desktop Versions"
     }
 };
 

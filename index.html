@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MoveCare - La tua salute, la nostra priorità</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .btn-icon { display: none; }
+        @media (max-width: 768px) {
+            .btn-text { display: none; }
+            .btn-icon { display: block; }
+            .btn-download { padding: 10px 12px; }
+        }
+    </style>
 </head>
 <body>
 
@@ -17,31 +25,32 @@
             </div>
         </a>
         <div class="header-actions">
-                <!-- Selettore Lingua -->
-                <select id="lang-selector" class="lang-select">
-                    <option value="it">🇮🇹 IT</option>
-                    <option value="en">🇬🇧 EN</option>
-                </select>
-
                 <!-- Pulsante Login (Visibile se sloggato) -->
-                <a href="login.html" id="login-btn" class="btn btn-secondary">Login</a>
+                <a href="#login" id="login-btn" class="btn btn-secondary" data-i18n="nav_login">Login</a>
                 
                 <!-- Pulsante Profilo (Visibile se loggato) -->
-                <a href="profile.html" id="profile-btn" class="btn-profile" style="display: none;">
+                <a href="#profile" id="profile-btn" class="btn-profile" style="display: none;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                 </a>
 
-            <a href="download.html" class="btn">Scarica l'App</a>
+            <a href="#download" class="btn btn-download">
+                <span class="btn-text" data-i18n="nav_download">Scarica l'App</span>
+                <span class="btn-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                </span>
+            </a>
         </div>
     </div>
 </header>
 
 <main>
+    <!-- VISTA HOME -->
+    <div id="view-home" class="page-view active">
     <section id="hero">
         <div class="container">
             <div class="hero-content fade-in">
-                <h1>Il tuo benessere, <br> a portata di mano</h1>
-                <p>La piattaforma completa per coach e clienti. Allenati meglio, gestisci il tuo business e raggiungi i tuoi obiettivi.</p>
+                <h1 data-i18n="hero_title">Il tuo benessere, <br> a portata di mano</h1>
+                <p data-i18n="hero_desc">La piattaforma completa per coach e clienti. Allenati meglio, gestisci il tuo business e raggiungi i tuoi obiettivi.</p>
             </div>
         </div>
     </section>
@@ -50,30 +59,30 @@
         <div class="container">
             <!-- Tab Navigation -->
             <div class="tabs-nav">
-                <button class="tab-btn active" data-target="client">Sei un Cliente?</button>
-                <button class="tab-btn" data-target="coach">Sei un Coach?</button>
+                <button class="tab-btn active" data-target="client" data-i18n="tab_client">Sei un Cliente?</button>
+                <button class="tab-btn" data-target="coach" data-i18n="tab_coach">Sei un Coach?</button>
             </div>
 
             <!-- Tab Content: Cliente -->
             <div id="client" class="tab-content active">
-                <h2 class="section-title">Tutto ciò di cui hai bisogno</h2>
+                <h2 class="section-title" data-i18n="sec_client_title">Tutto ciò di cui hai bisogno</h2>
 
                 <!-- Carosello Cliente -->
                 <div class="carousel-layout" id="client-carousel">
                     <div class="feature-card fade-in" style="--i: 1;" data-detail="detail-plans">
                         <div class="icon">🏋️</div>
-                        <h3>Piani su Misura</h3>
-                        <p>Ricevi schede di allenamento e piani nutrizionali creati apposta per te dal tuo coach.</p>
+                        <h3 data-i18n="card_plans_title">Piani su Misura</h3>
+                        <p data-i18n="card_plans_desc">Ricevi schede di allenamento e piani nutrizionali creati apposta per te dal tuo coach.</p>
                     </div>
                     <div class="feature-card fade-in" style="--i: 2;" data-detail="detail-chat">
                         <div class="icon">💬</div>
-                        <h3>Chat Diretta</h3>
-                        <p>Comunica con il tuo coach, fai domande e ricevi feedback in tempo reale per non sbagliare mai.</p>
+                        <h3 data-i18n="card_chat_title">Chat Diretta</h3>
+                        <p data-i18n="card_chat_desc">Comunica con il tuo coach, fai domande e ricevi feedback in tempo reale per non sbagliare mai.</p>
                     </div>
                     <div class="feature-card fade-in" style="--i: 3;" data-detail="detail-progress">
                         <div class="icon">📈</div>
-                        <h3>Monitoraggio Progressi</h3>
-                        <p>Invia check-in periodici con peso, misure e foto per un'analisi dettagliata del tuo percorso.</p>
+                        <h3 data-i18n="card_prog_title">Monitoraggio Progressi</h3>
+                        <p data-i18n="card_prog_desc">Invia check-in periodici con peso, misure e foto per un'analisi dettagliata del tuo percorso.</p>
                     </div>
                 </div>
 
@@ -81,41 +90,49 @@
                 <div id="detail-plans" class="detail-panel">
                         <h3 data-i18n="det_plans_title">Dettagli Piani su Misura</h3>
                         <p data-i18n="det_plans_desc">Visualizza i tuoi allenamenti giorno per giorno con video tutorial e timer integrati.</p>
-                    <div class="screenshot-placeholder">Screenshot App: Scheda Allenamento</div>
+                    <div class="screenshots-container">
+                        <img src="images/client_plan.png" alt="Scheda Allenamento" class="app-screenshot">
+                        <img src="images/client_plan2.png" alt="Scheda Allenamento" class="app-screenshot">
+                    </div>
                 </div>
+                
                 <div id="detail-chat" class="detail-panel">
                         <h3 data-i18n="det_chat_title">Chat Integrata</h3>
                         <p data-i18n="det_chat_desc">Resta sempre in contatto. Invia video della tua esecuzione e ricevi correzioni immediate.</p>
-                    <div class="screenshot-placeholder">Screenshot App: Chat Coach</div>
+                    <div class="screenshots-container">
+                        <img src="images/client_chat.png" alt="Chat Coach" class="app-screenshot">
+                    </div>
                 </div>
                 <div id="detail-progress" class="detail-panel">
                         <h3 data-i18n="det_prog_title">I tuoi Progressi</h3>
                         <p data-i18n="det_prog_desc">Grafici intuitivi per monitorare il peso, le misure corporee e i carichi sollevati nel tempo.</p>
-                    <div class="screenshot-placeholder">Screenshot App: Grafici</div>
+                    <div class="screenshots-container">
+                        <img src="images/client_trend.png" alt="Grafici Progressi" class="app-screenshot">
+                    </div>
                 </div>
             </div>
 
             <!-- Tab Content: Coach -->
             <div id="coach" class="tab-content">
-                <h2 class="section-title">Strumenti per Coach</h2>
-                <p class="section-description">Porta la tua attività al livello successivo. MoveCare ti offre gli strumenti per gestire i tuoi clienti, creare contenuti e far crescere il tuo brand.</p>
+                <h2 class="section-title" data-i18n="sec_coach_title">Strumenti per Coach</h2>
+                <p class="section-description" data-i18n="sec_coach_desc">Porta la tua attività al livello successivo. MoveCare ti offre gli strumenti per gestire i tuoi clienti, creare contenuti e far crescere il tuo brand.</p>
 
                 <!-- Carosello Coach -->
                 <div class="carousel-layout" id="coach-carousel">
                     <div class="feature-card fade-in" style="--i: 1;" data-detail="detail-coach-clients">
                         <div class="icon">👥</div>
-                        <h3>Gestisci i Clienti</h3>
-                        <p>Centralizza la gestione dei clienti, assegna piani e monitora i progressi da una dashboard intuitiva.</p>
+                        <h3 data-i18n="card_c_clients_title">Gestisci i Clienti</h3>
+                        <p data-i18n="card_c_clients_desc">Centralizza la gestione dei clienti, assegna piani e monitora i progressi da una dashboard intuitiva.</p>
                     </div>
                     <div class="feature-card fade-in" style="--i: 2;" data-detail="detail-coach-plans">
                         <div class="icon">✍️</div>
-                        <h3>Crea Piani e Contenuti</h3>
-                        <p>Costruisci la tua libreria di esercizi e componi piani di allenamento e nutrizionali in modo semplice e veloce.</p>
+                        <h3 data-i18n="card_c_plans_title">Crea Piani e Contenuti</h3>
+                        <p data-i18n="card_c_plans_desc">Costruisci la tua libreria di esercizi e componi piani di allenamento e nutrizionali in modo semplice e veloce.</p>
                     </div>
                     <div class="feature-card fade-in" style="--i: 3;" data-detail="detail-coach-brand">
                         <div class="icon">🚀</div>
-                        <h3>Fai Crescere il Tuo Brand</h3>
-                        <p>Condividi la tua esperienza attraverso articoli, video e merchandise per raggiungere nuovi clienti.</p>
+                        <h3 data-i18n="card_c_brand_title">Fai Crescere il Tuo Brand</h3>
+                        <p data-i18n="card_c_brand_desc">Condividi la tua esperienza attraverso articoli, video e merchandise per raggiungere nuovi clienti.</p>
                     </div>
                 </div>
 
@@ -123,36 +140,245 @@
                 <div id="detail-coach-clients" class="detail-panel">
                         <h3 data-i18n="det_c_clients_title">Dashboard Clienti</h3>
                         <p data-i18n="det_c_clients_desc">Una panoramica completa di tutti i tuoi atleti con notifiche intelligenti.</p>
-                    <div class="screenshot-placeholder">Screenshot App: Lista Clienti</div>
+                    <div class="screenshots-container">
+                        <img src="images/coach_clients.png" alt="Dashboard Clienti" class="app-screenshot">
+                    </div>
                 </div>
                 <div id="detail-coach-plans" class="detail-panel">
                         <h3 data-i18n="det_c_plans_title">Editor Allenamenti</h3>
                         <p data-i18n="det_c_plans_desc">Crea schede in pochi minuti trascinando gli esercizi dal database.</p>
-                    <div class="screenshot-placeholder">Screenshot App: Editor Schede</div>
+                    <div class="screenshots-container">
+                        <img src="images/coach_library.png" alt="Editor Allenamenti" class="app-screenshot">
+                    </div>
                 </div>
                 <div id="detail-coach-brand" class="detail-panel">
                         <h3 data-i18n="det_c_brand_title">Strumenti di Marketing</h3>
                         <p data-i18n="det_c_brand_desc">Analisi delle performance del tuo profilo e strumenti di condivisione social.</p>
-                    <div class="screenshot-placeholder">Screenshot App: Analytics</div>
+                    <div class="screenshots-container">
+                        <img src="images/coach_analytics.png" alt="Analytics" class="app-screenshot">
+                    </div>
                 </div>
             </div>
 
         </div>
     </section>
+    </div>
+
+    <!-- VISTA LOGIN (Copiata da login.html) -->
+    <div id="view-login" class="page-view">
+        <div class="container auth-container">
+            <div class="auth-card" id="login-card">
+                <h2 data-i18n="login_welcome">Bentornato</h2>
+                <div id="login-error" class="error-message"></div>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="email" data-i18n="login_email_label">Email</label>
+                        <input type="email" id="email" required placeholder="nome@esempio.com" data-i18n="login_email_placeholder">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" data-i18n="login_password_label">Password</label>
+                        <input type="password" id="password" required placeholder="La tua password" data-i18n="login_password_placeholder">
+                    </div>
+                    <button type="submit" class="auth-btn" data-i18n="login_btn">Accedi</button>
+                </form>
+                <div class="auth-links">
+                    <a id="show-reset" data-i18n="login_forgot" style="cursor: pointer;">Password dimenticata?</a>
+                </div>
+            </div>
+
+            <div class="auth-card" id="reset-card" style="display: none;">
+                <h2 data-i18n="reset_title">Recupera Password</h2>
+                <p data-i18n="reset_desc">Inserisci la tua email. Ti invieremo un link per reimpostare la password.</p>
+                <form id="reset-form">
+                    <div class="form-group">
+                        <label for="reset-email" data-i18n="login_email_label">Email</label>
+                        <input type="email" id="reset-email" required placeholder="nome@esempio.com" data-i18n="login_email_placeholder">
+                    </div>
+                    <button type="submit" class="auth-btn" data-i18n="reset_btn">Invia Link</button>
+                </form>
+                <div class="auth-links">
+                    <a id="show-login" data-i18n="reset_back" style="cursor: pointer;">Torna al Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VISTA PROFILO (Copiata da profile.html) -->
+    <div id="view-profile" class="page-view">
+        <div class="container auth-container">
+            <div class="auth-card">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">👤</div>
+                <h2 data-i18n="profile_title">Il tuo Profilo</h2>
+                <div style="text-align: left; margin: 2rem 0;">
+                    <p><strong data-i18n="profile_email">Email:</strong> <span id="user-email">Caricamento...</span></p>
+                    <p><strong data-i18n="profile_uid">ID Utente:</strong> <span id="user-uid" style="font-size: 0.8rem; color: #666;">...</span></p>
+                </div>
+                <div id="delete-section" style="margin-top: 2rem; border-top: 1px solid #eee; padding-top: 1rem;">
+                    <p id="delete-status" style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;"></p>
+                    <button id="request-delete-btn" class="auth-btn" style="background-color: #fff; color: #dc3545; border: 1px solid #dc3545; display: none;" data-i18n="profile_delete_req">Richiedi Cancellazione Account</button>
+                    <button id="cancel-delete-btn" class="auth-btn" style="background-color: #28a745; display: none;" data-i18n="profile_delete_cancel">Annulla Richiesta Cancellazione</button>
+                </div>
+                <button id="logout-btn" class="auth-btn" style="background-color: #dc3545;" data-i18n="profile_logout">Esci</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- VISTA DOWNLOAD (Copiata da download.html) -->
+    <div id="view-download" class="page-view">
+        <div class="container" style="text-align: center; padding-top: 4rem;">
+            <h1 data-i18n="download_title">Scarica MoveCare oggi</h1>
+            <p class="section-description" data-i18n="download_desc">Scegli il tuo store e inizia subito il tuo percorso di benessere.</p>
+            <div class="store-buttons">
+                <a href="https://apps.apple.com/it/app/movecare/id6755959539" class="store-badge apple"><svg viewBox="0 0 384 512" width="30"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 52.3-11.4 69.5-34.3z"/></svg><div class="text"><span class="small">Scarica su</span><span class="big">App Store</span></div></a>
+                <a href="https://play.google.com/store/apps/details?id=com.mcapp.move_care" class="store-badge google"><svg viewBox="0 0 512 512" width="30"><path fill="currentColor" d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg><div class="text"><span class="small">DISPONIBILE SU</span><span class="big">Google Play</span></div></a>
+            </div>
+
+            <h3 style="margin-top: 2.5rem; margin-bottom: 1rem; opacity: 0.7;" data-i18n="download_desktop">Versioni Desktop</h3>
+
+            <div class="store-buttons">
+                <!-- Windows (WIP) -->
+                <a href="#" class="store-badge windows wip" onclick="return false;">
+                    <svg viewBox="0 0 448 512" width="30"><path fill="currentColor" d="M0 93.7l183.6-25.3v177.4L0 220.3V93.7zm0 324.6l183.6-25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg>
+                    <div class="text">
+                        <span class="small">Presto su</span>
+                        <span class="big">Windows</span>
+                    </div>
+                </a>
+
+                <!-- macOS (WIP) -->
+                <a href="#" class="store-badge macos wip" onclick="return false;">
+                    <svg viewBox="0 0 384 512" width="30"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 52.3-11.4 69.5-34.3z"/></svg>
+                    <div class="text">
+                        <span class="small">Presto su</span>
+                        <span class="big">macOS</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- VISTA PRIVACY POLICY (Copiata da privacy.html) -->
+    <div id="view-privacy" class="page-view">
+        <div class="container">
+            <h1 data-i18n="privacy_h1">Privacy Policy</h1>
+            <p><em data-i18n="privacy_update">Ultimo aggiornamento: 02 Gennaio 2025</em></p>
+
+            <section>
+                <h2 data-i18n="privacy_1_title">1. Introduzione</h2>
+                <p data-i18n="privacy_1_text">Benvenuto su MoveCare. La tua privacy è importante per noi. Questa informativa spiega come raccogliamo, utilizziamo, divulghiamo e proteggiamo le tue informazioni quando utilizzi la nostra applicazione mobile e il nostro sito web.</p>
+            </section>
+
+            <section>
+                <h2 data-i18n="privacy_2_title">2. Raccolta delle Informazioni</h2>
+                <p data-i18n="privacy_2_text">Possiamo raccogliere informazioni su di te in vari modi. Le informazioni che possiamo raccogliere tramite l'App dipendono dal contenuto e dai materiali che utilizzi, e includono:</p>
+                <ul data-i18n="privacy_2_list">
+                    <li><strong>Dati Personali:</strong> Nome, indirizzo email, e altre informazioni di contatto che ci fornisci volontariamente.</li>
+                    <li><strong>Dati sulla Salute:</strong> Informazioni relative ai tuoi allenamenti, misure corporee e progressi.</li>
+                    <li><strong>Dati Derivati:</strong> Informazioni raccolte automaticamente.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 data-i18n="privacy_3_title">3. Utilizzo delle Informazioni</h2>
+                <p data-i18n="privacy_3_text">Avere informazioni accurate su di te ci permette di offrirti un'esperienza fluida, efficiente e personalizzata. Nello specifico, possiamo utilizzare le informazioni raccolte per:</p>
+                <ul data-i18n="privacy_3_list">
+                    <li>Creare e gestire il tuo account.</li>
+                    <li>Fornirti piani di allenamento e nutrizionali personalizzati.</li>
+                    <li>Inviarti notifiche sugli aggiornamenti.</li>
+                    <li>Migliorare l'efficienza dell'App.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 data-i18n="privacy_4_title">4. Sicurezza dei Dati</h2>
+                <p data-i18n="privacy_4_text">Utilizziamo misure di sicurezza amministrative, tecniche e fisiche per proteggere le tue informazioni personali.</p>
+            </section>
+
+            <section>
+                <h2 data-i18n="privacy_5_title">5. Conservazione ed Eliminazione dei Dati</h2>
+                <p data-i18n="privacy_5_text_1"><strong>Conservazione:</strong> I tuoi dati restano sui nostri server finché l'account è attivo.</p>
+
+                <p data-i18n="privacy_5_text_2"><strong>Eliminazione:</strong> Puoi richiedere la cancellazione:</p>
+                <ul data-i18n="privacy_5_list">
+                    <li><strong>Dall'App:</strong> Impostazioni > Profilo > Elimina Account.</li>
+                    <li><strong>Via Email:</strong> Scrivendo al supporto.</li>
+                </ul>
+
+                <p data-i18n="privacy_5_text_3">La cancellazione è definitiva e rimuove tutti i dati.</p>
+            </section>
+
+            <section>
+                <h2 data-i18n="privacy_6_title">6. Contatti</h2>
+                <p data-i18n="privacy_6_text">Se hai domande o commenti su questa Privacy Policy, ti preghiamo di contattarci all'indirizzo email: <a href="mailto:movecare.mc@gmail.com">movecare.mc@gmail.com</a></p>
+            </section>
+        </div>
+    </div>
+
+    <!-- VISTA TERMINI DI SERVIZIO (Copiata da terms.html) -->
+    <div id="view-terms" class="page-view">
+        <div class="container">
+            <h1 data-i18n="terms_h1">Termini di Servizio</h1>
+            <p><em data-i18n="terms_update">Ultimo aggiornamento: 02 Gennaio 2025</em></p>
+
+            <section>
+                <h2 data-i18n="terms_1_title">1. Accettazione dei Termini</h2>
+                <p data-i18n="terms_1_text">Scaricando, installando o utilizzando l'applicazione MoveCare ("App") o accedendo al nostro sito web, accetti di essere vincolato dai presenti Termini di Servizio. Se non accetti questi termini, ti preghiamo di non utilizzare i nostri servizi.</p>
+            </section>
+
+            <section>
+                <h2 data-i18n="terms_2_title">2. Descrizione del Servizio</h2>
+                <p data-i18n="terms_2_text">MoveCare è una piattaforma che mette in contatto coach e clienti, fornendo strumenti per la gestione di allenamenti, piani nutrizionali e monitoraggio dei progressi. MoveCare funge da intermediario tecnologico e non è responsabile diretto dei consigli forniti dai singoli coach.</p>
+            </section>
+
+            <section>
+                <h2 data-i18n="terms_3_title">3. Disclaimer Medico e Salute</h2>
+                <p data-i18n="terms_3_text"><strong>Importante:</strong> L'uso di MoveCare non sostituisce il parere di un medico professionista. Prima di iniziare qualsiasi programma di allenamento o nutrizionale, dovresti consultare il tuo medico.<br><br>Utilizzando l'App, dichiari di essere in buona salute fisica e di non avere condizioni mediche che potrebbero rendere pericoloso l'esercizio fisico. MoveCare non è responsabile per infortuni o danni alla salute derivanti dall'esecuzione degli esercizi proposti.</p>
+            </section>
+
+            <section>
+                <h2 data-i18n="terms_4_title">4. Account Utente</h2>
+                <p data-i18n="terms_4_text">Per utilizzare alcune funzionalità, devi creare un account. Sei responsabile della riservatezza delle tue credenziali di accesso e di tutte le attività che avvengono sotto il tuo account. Ci riserviamo il diritto di sospendere o terminare account che violano questi termini o che vengono utilizzati per attività fraudolente.</p>
+            </section>
+
+            <section>
+                <h2 data-i18n="terms_5_title">5. Proprietà Intellettuale</h2>
+                <p data-i18n="terms_5_text">Tutti i contenuti presenti sull'App (testi, grafica, loghi, software) sono di proprietà di MoveCare o dei suoi licenziatari e sono protetti dalle leggi sul copyright. È vietata la riproduzione o la distribuzione non autorizzata.</p>
+            </section>
+
+            <section>
+                <h2 data-i18n="terms_6_title">6. Limitazione di Responsabilità</h2>
+                <p data-i18n="terms_6_text">Nella misura massima consentita dalla legge, MoveCare non sarà responsabile per danni indiretti, incidentali o consequenziali derivanti dall'uso o dall'impossibilità di utilizzare il servizio.</p>
+            </section>
+
+            <section>
+                <h2 data-i18n="terms_7_title">7. Modifiche ai Termini</h2>
+                <p data-i18n="terms_7_text">Ci riserviamo il diritto di modificare questi termini in qualsiasi momento. Le modifiche saranno effettive dal momento della pubblicazione su questa pagina. L'uso continuato dell'App dopo tali modifiche costituisce accettazione dei nuovi termini.</p>
+            </section>
+
+            <section>
+                <h2 data-i18n="terms_8_title">8. Contatti</h2>
+                <p data-i18n="terms_8_text">Per domande riguardanti questi Termini di Servizio, contattaci all'indirizzo email: <a href="mailto:movecare.mc@gmail.com">movecare.mc@gmail.com</a></p>
+            </section>
+        </div>
+    </div>
 </main>
 
 <footer>
     <div class="container">
         <div class="social-links">
-            <a href="#" aria-label="Instagram">
+            <a href="https://www.instagram.com/movecare_/" aria-label="Instagram" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
             </a>
-            <a href="#" aria-label="Facebook">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-            </a>
         </div>
-        <p>&copy; 2024 MoveCare. Tutti i diritti riservati.</p>
-            <p><a href="privacy.html" data-i18n="footer_privacy">Privacy Policy</a> | <a href="terms.html" data-i18n="footer_terms">Termini di Servizio</a></p>
+
+        <!-- Selettore Lingua -->
+        <select id="lang-selector" class="lang-select">
+            <option value="it">🇮🇹 IT</option>
+            <option value="en">🇬🇧 EN</option>
+        </select>
+
+        <p data-i18n="footer_rights">&copy; 2024 MoveCare. Tutti i diritti riservati.</p>
+            <p><a href="#privacy" data-i18n="footer_privacy">Privacy Policy</a> | <a href="#terms" data-i18n="footer_terms">Termini di Servizio</a></p>
     </div>
 </footer>
 
@@ -210,6 +436,30 @@
             if(panel) panel.classList.add('active');
         });
     });
+
+    // --- ROUTER SPA ---
+    function router() {
+        // Ottieni l'hash dall'URL (es. #login) o usa 'home' come default
+        let hash = window.location.hash.replace('#', '') || 'home';
+        
+        // Nascondi tutte le viste
+        document.querySelectorAll('.page-view').forEach(view => {
+            view.classList.remove('active');
+        });
+
+        // Trova la vista corrispondente
+        const activeView = document.getElementById('view-' + hash);
+        
+        if (activeView) {
+            activeView.classList.add('active');
+            // Scrolla in cima quando cambi pagina
+            window.scrollTo(0, 0);
+        }
+    }
+
+    // Ascolta i cambiamenti dell'URL e il caricamento iniziale
+    window.addEventListener('hashchange', router);
+    window.addEventListener('load', router);
 </script>
 
     <!-- Firebase Auth Logic (Globale) -->
